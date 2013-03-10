@@ -46,3 +46,6 @@ gem "nifty-generators", :group => :development
 gem "paperclip", "~> 2.3"
 
 gem "mocha", :group => :test
+
+#For nested folders
+gem "acts_as_tree"

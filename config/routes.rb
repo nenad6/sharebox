@@ -1,6 +1,8 @@
 Sharebox::Application.routes.draw do
 
 
+  resources :folders
+
   resources :assets
 
   devise_for :users do
