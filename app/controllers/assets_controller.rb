@@ -15,13 +15,13 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = current_user.assets.new(params[:asset])
+    @asset = current_user.assets.build(params[:asset])
     if @asset.save
-      redirect_to @asset, :notice => "Successfully created asset."
-    else
-      render :action => 'new'
+      redirect_to @asset, :notice => "Successfully updated asset."
+
     end
-  end
+
+   end
 
   def edit
     @asset = current_user.assets.find(params[:id])

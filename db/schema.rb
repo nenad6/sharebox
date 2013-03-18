@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130310222511) do
     t.integer  "folder_id"
   end
 
+  add_index "assets", ["folder_id"], :name => "index_assets_on_folder_id"
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
 
   create_table "folders", :force => true do |t|
@@ -33,6 +34,9 @@ ActiveRecord::Schema.define(:version => 20130310222511) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "folders", ["parent_id"], :name => "index_folders_on_parent_id"
+  add_index "folders", ["user_id"], :name => "index_folders_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

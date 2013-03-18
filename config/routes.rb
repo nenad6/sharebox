@@ -19,6 +19,9 @@ Sharebox::Application.routes.draw do
   #for creating folders insiide another folder
   match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder"
 
+  #for uploading files to folders
+  match "browse/:folder_id/new_file" => "assets#new", :as => "new_sub_file"
+
 
 
   # The priority is based upon order of creation:

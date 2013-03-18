@@ -2,14 +2,13 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      #show only root folders (which have no parent folders)
-      @folders = current_user.folders.roots
+      #load current_user's folders
+      @folders = current_user.folders.order("name desc")
 
-      #show only root files which has no "folder_id"
-      @assets = current_user.assets.where("folder_id is NULL").order("uploaded_file_file_name desc")
+      #load current_user's files(assets)
+      @assets = current_user.assets.order("uploaded_file_file_name desc")
     end
   end
-
   #this action is for viewing folders
     def browse
       #get the folders owned/created by the current_user
