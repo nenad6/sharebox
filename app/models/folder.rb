@@ -9,7 +9,8 @@ class Folder < ActiveRecord::Base
 
   has_many :shared_folders, :dependent => :destroy
 
+  #a method to check if a folder has been shared or not
   def shared?
-    !self.shared_folders.empty?
+    !self.shared_assets.empty?
   end
 end
